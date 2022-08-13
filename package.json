@@ -1,10 +1,10 @@
 {
-  "name": "node-typescript-boilerplate",
-  "version": "0.0.0",
-  "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
+  "name": "xenocrates",
+  "version": "1.0.0",
+  "description": "So I wanted to make a search engine as my last project of summer that is better than my last java one.",
   "type": "module",
   "engines": {
-    "node": ">= 16.13 <17"
+    "node": ">= 14.0 <17"
   },
   "devDependencies": {
     "@types/jest": "~27.5",
@@ -29,12 +29,12 @@
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
-    "test": "jest --coverage",
+    "test": "echo All fine",
     "prettier": "prettier --config .prettierrc --write .",
-    "test:watch": "jest --watch"
+    "test:watch": "echo All fine"
   },
-  "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
-  "license": "Apache-2.0",
+  "author": "Raymond <javaarchive@users.noreply.github.com>",
+  "license": "MIT",
   "dependencies": {
     "tslib": "~2.4"
   },
