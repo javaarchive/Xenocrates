@@ -1,6 +1,8 @@
 import Typesense from "typesense";
 import {defaultSchema} from "./schemas.js";
 
+import url from 'url'
+
 class Searcher {
     // TODO: MAKE TYPES!  
     opts: any;
@@ -11,8 +13,12 @@ class Searcher {
         this.opts = opts;
         this.collectionNames = opts.collectionNames || ["default"];
         this.defaultCollection = opts.defaultCollection || this.collectionNames[0];
+
+        const API_KEY = process.env.TYPESENSE_API_KEY || this.opts.apiKey;
+        // console.log("API KEY", API_KEY, process.env.TYPESENSE_API_KEY);
+        
         this.client = new Typesense.Client({
-            apiKey: this.opts.apiKey || process.env.TYPESENSE_API_KEY,
+            apiKey: API_KEY,
             nodes: [{
               'host': process.env.TYPESENSE_HOST || 'localhost',
               'port':  parseInt(process.env.TYPESENSE_PORT) || 8108,
@@ -35,9 +41,23 @@ class Searcher {
                 }
             }
             // TODO: fix types here
-            await this.client.collections().create(collectionOpts as any);
+            try{
+              await this.client.collections().create(collectionOpts as any);
+            }catch(ex){
+              // already exists
+            }
         }));
     }
+}
+
+if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
+    // main!
+    (await import("dotenv")).config();
+    const createServer = (await import ("./server.js")).default;
+    const searcher = new Searcher();
+    searcher.init().then(() => {
+      createServer(searcher).listen(process.env.PORT || 3000, () => console.log("Search service listening on port 3000. "));
+    });
 }
 
 export default Searcher;
