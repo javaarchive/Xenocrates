@@ -31,12 +31,15 @@
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "echo All fine",
     "prettier": "prettier --config .prettierrc --write .",
-    "test:watch": "echo All fine"
+    "test:watch": "echo All fine",
+    "selfhost-prepare": "scripts/selfhost/download_typesense.sh",
+    "selfhost-dependencies": "scripts/selfhost/run_typesense.sh"
   },
   "author": "Raymond <javaarchive@users.noreply.github.com>",
   "license": "GPL",
   "dependencies": {
-    "tslib": "~2.4"
+    "tslib": "~2.4",
+    "typesense": "^1.4.0"
   },
   "volta": {
     "node": "16.13.0"
