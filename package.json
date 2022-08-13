@@ -34,7 +34,7 @@
     "test:watch": "echo All fine"
   },
   "author": "Raymond <javaarchive@users.noreply.github.com>",
-  "license": "MIT",
+  "license": "GPL",
   "dependencies": {
     "tslib": "~2.4"
   },
