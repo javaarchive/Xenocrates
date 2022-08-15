@@ -36,6 +36,8 @@
     "selfhost-dependencies": "scripts/selfhost/run_typesense.sh",
     "selfhost-nuke": "echo Nuking search database in 10 seconds && sleep 10 && rm -rf typesense/data"
   },
+  "repository": "github:javaarchive/Xenocrates",
+  "homepage": "https://github.com/javaarchive/Xenocrates/",
   "author": "Raymond <javaarchive@users.noreply.github.com>",
   "license": "GPL",
   "dependencies": {
