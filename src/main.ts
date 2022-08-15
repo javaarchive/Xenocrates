@@ -146,4 +146,4 @@ if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
 }
 
 export default Searcher;
-export {Searcher};
+export {Searcher,normalizerOpts,urlAsID};
