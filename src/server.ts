@@ -16,7 +16,7 @@ export default function createServer(searcher: Searcher){
 
     app.get("/search", async (req, res) => {
         if(!req.query.q){
-            res.send("NO QUERY!!!");
+            res.status(400).send("NO QUERY!");
         }
         const pageNumber = parseInt(req.query.pageNumber || "1");
         // Clamp!
