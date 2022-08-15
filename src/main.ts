@@ -101,8 +101,11 @@ class Searcher {
      */
     async getByUrl(url: string, collectionName: string = this.defaultCollection){
         const id = urlAsID(url);
-        const doc = await this.client.collections(collectionName).documents(id).retrieve();
-        return doc;
+        return this.getByID(id);
+    }
+
+    async getByID(id: string, collectionName: string = this.defaultCollection){
+        return await this.client.collections(collectionName).documents(id).retrieve();
     }
 
     async deleteByUrl(url: string, collectionName: string = this.defaultCollection){
