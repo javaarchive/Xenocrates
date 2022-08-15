@@ -1,7 +1,7 @@
 {
   "name": "xenocrates",
-  "version": "1.0.0",
-  "description": "So I wanted to make a search engine as my last project of summer that is better than my last java one.",
+  "version": "1.2.0",
+  "description": "So I wanted to make a search engine as my last project of summer that is better than my last java one. This is the core wrapper around the typesense client. ",
   "type": "module",
   "engines": {
     "node": ">= 14.0 <17"
@@ -29,15 +29,17 @@
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
-    "test": "echo All fine",
+    "test": "echo Tests have not been added yet",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "echo All fine",
     "selfhost-prepare": "scripts/selfhost/download_typesense.sh",
-    "selfhost-dependencies": "scripts/selfhost/run_typesense.sh"
+    "selfhost-dependencies": "scripts/selfhost/run_typesense.sh",
+    "selfhost-nuke": "echo Nuking search database in 10 seconds && sleep 10 && rm -rf typesense/data"
   },
   "author": "Raymond <javaarchive@users.noreply.github.com>",
   "license": "GPL",
   "dependencies": {
+    "normalize-url": "^7.0.3",
     "tslib": "~2.4",
     "typesense": "^1.4.0"
   },
