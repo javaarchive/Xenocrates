@@ -1,6 +1,6 @@
 {
   "name": "xenocrates",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "So I wanted to make a search engine as my last project of summer that is better than my last java one. This is the core wrapper around the typesense client. ",
   "type": "module",
   "engines": {
