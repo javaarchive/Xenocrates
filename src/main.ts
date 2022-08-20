@@ -7,7 +7,6 @@ import url from 'url'
 
 import {urlAsID,normalizerOpts} from "./utils.js";
 import normalizeUrl from 'normalize-url';
-
 class Searcher {
     // TODO: MAKE TYPES!  
     opts: any;
@@ -149,4 +148,4 @@ if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
 }
 
 export default Searcher;
-export {Searcher,normalizerOpts,urlAsID};
+export {Searcher,normalizerOpts,urlAsID,Item,SearchParamsExtended};
