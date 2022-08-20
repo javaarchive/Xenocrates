@@ -1,6 +1,6 @@
 {
   "name": "xenocrates",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "So I wanted to make a search engine as my last project of summer that is better than my last java one. This is the core wrapper around the typesense client. ",
   "type": "module",
   "engines": {
@@ -21,7 +21,7 @@
     "tsutils": "~3.21",
     "typescript": "~4.7"
   },
-  "bin":"build/src/main.js",
+  "bin":"./build/src/main.js",
   "scripts": {
     "start": "node build/src/main.js",
     "clean": "rimraf coverage build tmp",
