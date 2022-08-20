@@ -1,6 +1,7 @@
 import Typesense from "typesense";
 import {defaultSchema} from "./schemas.js";
 
+// to be reexported as well
 import {Item,SearchParamsExtended} from "./interfaces.js";
 
 import url from 'url'
@@ -148,4 +149,5 @@ if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
 }
 
 export default Searcher;
+
 export {Searcher,normalizerOpts,urlAsID,Item,SearchParamsExtended};
