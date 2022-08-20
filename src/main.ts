@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import Typesense from "typesense";
 import {defaultSchema} from "./schemas.js";
 
