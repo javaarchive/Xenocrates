@@ -29,7 +29,7 @@
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
-    "lint": "eslint . --ext .ts --ext .mts",
+    "lint": "eslint . --ext .ts --ext .mts || echo Linter not installed",
     "test": "echo Tests have not been added yet",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "echo All fine",
