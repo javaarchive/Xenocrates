@@ -21,6 +21,9 @@ class Searcher {
         this.defaultCollection = opts.defaultCollection || this.collectionNames[0];
 
         const API_KEY = process.env.TYPESENSE_API_KEY || this.opts.apiKey;
+        if(API_KEY.length < 8 && opts.logging){
+            console.warn("Extremely short api key of length " + API_KEY.length + " detected. Misconfiguration?");
+        }
         // console.log("API KEY", API_KEY, process.env.TYPESENSE_API_KEY);
         
         this.client = new Typesense.Client({
